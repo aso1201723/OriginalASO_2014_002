@@ -7,8 +7,7 @@
     <ImageView
         android:id="@+id/imageView1"
         android:layout_width="142dp"
-        android:layout_height="274dp"
-        android:src="@drawable/abc_ab_bottom_solid_dark_holo" />
+        android:layout_height="274dp" />
 
     <TextView
         android:id="@+id/textView1"

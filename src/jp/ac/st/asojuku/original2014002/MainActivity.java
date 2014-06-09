@@ -1,3 +1,5 @@
+// 情シ専Ａ　池田和樹
+
 package jp.ac.st.asojuku.original2014002;
 
 import android.app.Activity;
@@ -46,13 +48,13 @@ public class MainActivity extends Activity implements View.OnClickListener {
 		// TODO 自動生成されたメソッド・スタブ
 		switch (v.getId()){
 		case R.id.btnCheck:
-			Intent ic = new Intent (this,);
+			Intent ic = new Intent (this, CheckActivity.class);
 			startActivity(ic);
 			break;
 
 		case R.id.btnMente:
-			Intent im = new Intent(this,);
-			startActivity(ic);
+			Intent im = new Intent(this, MenteActivity.class);
+			startActivity(im);
 			break;
 
 		case R.id.btnTouroku:
