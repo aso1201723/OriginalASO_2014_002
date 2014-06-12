@@ -22,7 +22,7 @@ public class CheckActivity extends Activity {
 		//画面に渡されたインテントを取得
 		Intent inte = this.getIntent();
 		//inteから、Extraに入った値を取得
-		String strHitokoto = inte.getStringExtra("Hitokoto");
+		String strHitokoto = inte.getStringExtra("hitokoto");
 
 		//取得したStringを、txtCheck1にセット
 		TextView txtHitokoto = (TextView)findViewById(R.id.txtCheck1);

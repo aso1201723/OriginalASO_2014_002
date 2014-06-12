@@ -11,10 +11,16 @@
         android:src="@drawable/droid4" />
 
     <TextView
-        android:id="@+id/txtCheck1"
+        android:id="@+id/tC2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Large Text"
         android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/txtCheck1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
 
 </LinearLayout>

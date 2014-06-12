@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
@@ -89,6 +90,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
 			// エディットテキストからの入力を取り出す
 			EditText edt1 = (EditText)findViewById(R.id.editTxt1);
 			String inputMsg = edt1.getText().toString();
+
+			Log.d("MainActivity", inputMsg);
 
 			// inputMsgがnullでない、かつ、からでない場合のみ、if文を実行
 			if(inputMsg != null && !inputMsg.isEmpty()) {
