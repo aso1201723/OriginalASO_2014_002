@@ -8,19 +8,14 @@
         android:id="@+id/imageView1"
         android:layout_width="142dp"
         android:layout_height="274dp"
+        android:layout_gravity="center"
         android:src="@drawable/droid4" />
-
-    <TextView
-        android:id="@+id/tC2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Large Text"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
         android:id="@+id/txtCheck1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingLeft="15dp"
         android:text="TextView" />
 
 </LinearLayout>

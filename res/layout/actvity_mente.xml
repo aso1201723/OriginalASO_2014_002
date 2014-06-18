@@ -5,7 +5,7 @@
     android:orientation="vertical" >
 
     <ListView
-        android:id="@+id/listView1"
+        android:id="@+id/listHitokoto"
         android:layout_width="match_parent"
         android:layout_height="353dp"
         android:layout_weight="0.64" >
@@ -17,16 +17,17 @@
         android:layout_gravity="center" >
 
         <Button
-            android:id="@+id/btnMente"
+            android:id="@+id/btnMente_BACK"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="戻る" />
 
         <Button
-            android:id="@+id/btnTouroku"
+            android:id="@+id/btnDELETE"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="削除" />
+
     </LinearLayout>
 
 </LinearLayout>

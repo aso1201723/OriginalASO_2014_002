@@ -81,7 +81,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 			startActivity(inte);
 			break;
 
-		case R.id.btnMente:
+		case R.id.btnMente://メンテボタンが押された
 			inte = new Intent(this, MenteActivity.class);
 			startActivity(inte);
 			break;
