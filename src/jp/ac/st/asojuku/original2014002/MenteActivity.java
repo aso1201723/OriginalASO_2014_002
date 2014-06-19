@@ -5,12 +5,14 @@ import android.database.sqlite.SQLiteCursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
+import android.provider.BaseColumns;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
+import android.widget.Toast;
 
 public class MenteActivity extends Activity implements View.OnClickListener, AdapterView.OnItemClickListener{
 
@@ -20,7 +22,7 @@ public class MenteActivity extends Activity implements View.OnClickListener, Ada
 	//MySQLiteOpenHelperを操作するインスタンス変数を宣言
 	MySQLiteOpenHelper helper = null;
 
-	// リストに手選択したHitokotoテーブルのレコードの「_id」カラム値を保持する変数を宣言
+	// リストにて選択したHitokotoテーブルのレコードの「_id」カラム値を保持する変数を宣言
 	int selectedID = -1;
 
 	//リストにて選択した行番号を保持する変数の宣言
@@ -102,11 +104,32 @@ public class MenteActivity extends Activity implements View.OnClickListener, Ada
 	@Override
 	public void onClick(View v){
 
+		switch(v.getId()){
+
+		case R.id.btnMente_BACK: //戻るボタンを押したときの処理
+			finish();
+			break;
+
+		case R.id.btnDELETE: //削除ボタンを押したときの処理
+			if(selectedID != -1){
+			this.helper.deleteHitokoto(sdb,selectedID); // ＩＮＴ型のselectedIDを使ってdeleteHitokotoメソッドを呼び出し
+			Toast.makeText(getApplicationContext(),selectedID + "を削除しました",Toast.LENGTH_LONG).show();
+			}
+			break;
+		}
+
 	}
 
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 		// TODO 自動生成されたメソッド・スタブ
+
+		ListView listView = (ListView) parent;
+		SQLiteCursor cursor = (SQLiteCursor)listView.getItemAtPosition(position);
+		String Id = cursor.getString(cursor.getColumnIndex(BaseColumns._ID));
+		//Toast.makeText(getApplicationContext(), Id, Toast.LENGTH_LONG).show();
+
+		selectedID = cursor.getInt(cursor.getColumnIndex(BaseColumns._ID)); // トーストにindexを表示
 
 	}
 
