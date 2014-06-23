@@ -6,11 +6,14 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MenteActivity extends Activity implements View.OnClickListener, AdapterView.OnItemClickListener{
@@ -120,14 +123,34 @@ public class MenteActivity extends Activity implements View.OnClickListener, Ada
 				this.selectedID = -1;
 				this.lastPosition = -1;
 
-				/*-----------------自分でやった分-------------
+				/*-----------------自分でやった分---------------------
 				this.helper.deleteHitokoto(sdb,selectedID); // ＩＮＴ型のselectedIDを使ってdeleteHitokotoメソッドを呼び出し
 				//Toast.makeText(getApplicationContext(),selectedID + "を削除しました",Toast.LENGTH_LONG).show();
 				 *
 				 */
 			}else{
 				//選択行がなければ、トーストを表示
-				Toast.makeText(MenteActivity.this, "削除する行を選んでください", Toast.LENGTH_LONG).show();
+				//Toast.makeText(MenteActivity.this, "削除する行を選んでください", Toast.LENGTH_LONG).show();
+
+			//-------トーストに画像を表示したい！---------------------
+				// インフレータを取得
+				LayoutInflater inflater = getLayoutInflater();
+				// カスタムToast用のViewを取得する
+				View layout = inflater.inflate(R.layout.toast1, null);
+				// ImageViewを取得して任意のイメージを設定する
+				ImageView image = (ImageView)layout.findViewById(R.id.image1);
+				image.setImageResource(R.drawable.toki01);
+
+				//TextViewを取得して任意のテキストを設定
+				TextView text = (TextView)layout.findViewById(R.id.text1);
+				text.setText("削除する行を選ぶのだ");
+
+				//Toastにカスタマイズしたレイアウトを設定して表示する
+				Toast toast2 = new Toast(this);
+				toast2.setView(layout);
+				toast2.show();
+				
+
 			}
 			break;
 		}
