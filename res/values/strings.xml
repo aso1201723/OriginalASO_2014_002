@@ -4,5 +4,8 @@
     <string name="app_name">OriginalASO_2014_002</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="toki">削除する行を選ぶのだ！</string>
+    <string name="raoh">言ったはずだ！消す行を選べと！！！</string>
+    <string name="shin">何行目を消すかなァ？</string>
 
 </resources>

@@ -1,5 +1,7 @@
 package jp.ac.st.asojuku.original2014002;
 
+import java.util.Random;
+
 import android.app.Activity;
 import android.database.sqlite.SQLiteCursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -133,6 +135,7 @@ public class MenteActivity extends Activity implements View.OnClickListener, Ada
 				//Toast.makeText(MenteActivity.this, "削除する行を選んでください", Toast.LENGTH_LONG).show();
 
 			//-------トーストに画像を表示したい！---------------------
+				/*
 				// インフレータを取得
 				LayoutInflater inflater = getLayoutInflater();
 				// カスタムToast用のViewを取得する
@@ -143,13 +146,18 @@ public class MenteActivity extends Activity implements View.OnClickListener, Ada
 
 				//TextViewを取得して任意のテキストを設定
 				TextView text = (TextView)layout.findViewById(R.id.text1);
-				text.setText("削除する行を選ぶのだ");
+				text.setText("削除する行を選ぶのだ！");
 
 				//Toastにカスタマイズしたレイアウトを設定して表示する
 				Toast toast2 = new Toast(this);
 				toast2.setView(layout);
 				toast2.show();
-				
+				*/
+
+				//ランダム
+				Random r = new Random();
+				int n = r.nextInt(3); //1から3
+				toastHokuto(n); //数字に合わせて実行
 
 			}
 			break;
@@ -211,6 +219,35 @@ public class MenteActivity extends Activity implements View.OnClickListener, Ada
 		}
 		// MySQLiteOpenHelperにDELETE文を実行させる
 		this.helper.deleteHitokoto(sdb, id);
+	}
+
+	public void toastHokuto(int n){
+		// インフレータを取得
+		LayoutInflater inflater = getLayoutInflater();
+		// カスタムToast用のViewを取得する
+		View layout = inflater.inflate(R.layout.toast1, null);
+		ImageView image = (ImageView)layout.findViewById(R.id.image1);
+		TextView text = (TextView)layout.findViewById(R.id.text1);
+		switch(n){
+		case 0:
+			image.setImageResource(R.drawable.raoh2);
+			text.setText(R.string.raoh);
+			break;
+		case 1:
+			// ImageViewを取得して任意のイメージを設定する
+			image.setImageResource(R.drawable.toki01);
+			//TextViewを取得して任意のテキストを設定
+			text.setText(R.string.toki);
+			break;
+		case 2:
+			image.setImageResource(R.drawable.shin2);
+			text.setText(R.string.shin);
+			break;
+		}
+		Toast toastHK = new Toast(this);
+		toastHK.setView(layout);
+		toastHK.show();
+
 	}
 
 
