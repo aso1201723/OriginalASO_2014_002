@@ -1,5 +1,3 @@
-// 情シ専Ａ　池田和樹
-
 package jp.ac.st.asojuku.original2014002;
 
 import android.app.Activity;
